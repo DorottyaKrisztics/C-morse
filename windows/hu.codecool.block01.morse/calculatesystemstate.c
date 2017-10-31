@@ -1,4 +1,5 @@
 #include "selfprot.h"
+#include <stdio.h>
 
 /*
  * Function: CalculateSystemState
@@ -19,6 +20,8 @@ void CalculateSystemState(EnvironmentData *env) {
 	} else if (env->temp > 34){
 		env->state = HIGH_TEMP;
 	}
+
+	printf("size of struct: %d \n", sizeof(env));
 
 }
 
