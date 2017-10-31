@@ -38,7 +38,7 @@ void CalculateSystemState(EnvironmentData *env);
 int CharToMorse(char input[], char *output);
 int MorseToBinary(char input[], char output[]);
 
-
+float intToFloat(int input);
 
 /**************************************************************************/
 /**************************** HELPER CONSTANTS ****************************/
