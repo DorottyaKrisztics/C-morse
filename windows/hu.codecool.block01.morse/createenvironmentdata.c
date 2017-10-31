@@ -12,7 +12,11 @@
  * temp: magnitude of the temperature
  */
 EnvironmentData CreateEnvironmentData(float acc_x, float acc_y, float acc_z, signed int temp) {
-	acc_x = roundf(acc_x * 10) / 10;
-	EnvironmentData result = (EnvironmentData) {.acc_x = (int) acc_x * 10, .acc_y = acc_y * 10, .acc_z = acc_z * 10, .temp = temp};
+	EnvironmentData result = (EnvironmentData) {.acc_x = floatToInt(acc_x), .acc_y = floatToInt(acc_y), .acc_z = floatToInt(acc_z), .temp = temp};
 	return result;
+}
+
+int floatToInt(float input){
+	input = roundf(input * 10);
+	return (int) input;
 }
