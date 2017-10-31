@@ -1,5 +1,4 @@
 #include "selfprot.h"
-#include <math.h>
 
 /*
  * Function: CreateEnvironmentData

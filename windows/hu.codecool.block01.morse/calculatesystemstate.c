@@ -1,5 +1,4 @@
 #include "selfprot.h"
-#include <stdio.h>
 
 /*
  * Function: CalculateSystemState
@@ -10,19 +9,32 @@
  * env: contains environment data and calculated state will be stored in it
  */
 void CalculateSystemState(EnvironmentData *env) {
+
 	env->state = OK;
+	float acc_x = intToFloat(env->acc_x);
+	float acc_y = intToFloat(env->acc_y);
+	float acc_z = intToFloat(env->acc_z);
 
-	if (env->acc_x / 10 > 2 || env->acc_y /10 > 2 || env->acc_z /10 > 2 || (env->acc_x + env->acc_y + env->acc_z) / 10 > 3){
-		env->state = HIGH_ACCELERATION;
-		if (env->temp > 34){
-			env->state = HIGH_ACCELERATION_AND_TEMP;
+
+		if (acc_x > 2 || acc_y > 2 || acc_z > 2 || calcResultantAcc(acc_x, acc_y, acc_z) > 3){
+			env->state = HIGH_ACCELERATION;
+			if (env->temp > 34){
+				env->state = HIGH_ACCELERATION_AND_TEMP;
+			}
+		} else if (env->temp > 34){
+			env->state = HIGH_TEMP;
 		}
-	} else if (env->temp > 34){
-		env->state = HIGH_TEMP;
-	}
-
-	printf("size of struct: %d \n", sizeof(env));
 
 }
 
+float intToFloat(int input) {
+    float modulo = input % 10;
+    int number = input / 10;
 
+    return number + modulo / 10;
+}
+
+float calcResultantAcc (float acc_x, float acc_y, float acc_z) {
+
+    return sqrt(acc_x * acc_x + acc_y * acc_y + acc_z * acc_z);
+}

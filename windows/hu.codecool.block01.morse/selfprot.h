@@ -39,6 +39,8 @@ int CharToMorse(char input[], char *output);
 int MorseToBinary(char input[], char output[]);
 
 int floatToInt(float input);
+float intToFloat(int input);
+float calcResultantAcc (float acc_x, float acc_y, float acc_z);
 
 
 
