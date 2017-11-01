@@ -14,17 +14,24 @@
  */
 int CharToMorse(char input[], char *output) {
 
-	char* result = charToMorse('A');
+	int i;
+	int len = strlen(input);
+	for (i=0; i<len; i++) {
 
-	printf("Morse code for A: %s \n", result);
-	return 1;
+		char* morseLetter = charToMorse(input[i]);
+		strcat(output, morseLetter);
+		if (i != (len -1)) {
+			strcat(output, "/");
+		}
+	}
+	return len;
 }
 
 const char* charToMorse(char letter){
 
 	switch (letter){
 		case 'A' : return CHAR_TO_MORSE_ALPHA[0];
-		/*case 'B' : return CHAR_TO_MORSE_ALPHA[1];
+		case 'B' : return CHAR_TO_MORSE_ALPHA[1];
 		case 'C' : return CHAR_TO_MORSE_ALPHA[2];
 		case 'D' : return CHAR_TO_MORSE_ALPHA[3];
 		case 'E' : return CHAR_TO_MORSE_ALPHA[4];
@@ -48,7 +55,8 @@ const char* charToMorse(char letter){
 		case 'W' : return CHAR_TO_MORSE_ALPHA[22];
 		case 'X' : return CHAR_TO_MORSE_ALPHA[23];
 		case 'Y' : return CHAR_TO_MORSE_ALPHA[24];
-		case 'Z' : return CHAR_TO_MORSE_ALPHA[25];*/
+		case 'Z' : return CHAR_TO_MORSE_ALPHA[25];
+		case ' ' : return "\t";
 		default : return numberToMorse(letter);
 	}
 }
