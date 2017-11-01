@@ -13,15 +13,17 @@
  * returns: the index of the last converted character of the input
  */
 int CharToMorse(char input[], char *output) {
-	char *result = charToMorse('A');
-	printf("Morse code for A: %c \n", result);
-	printf("Morse code for A: %c \n", result[1]);
+
+	char* result = charToMorse('A');
+
+	printf("Morse code for A: %s \n", result);
 	return 1;
 }
 
-char charToMorse(char letter){
+const char* charToMorse(char letter){
+
 	switch (letter){
-		case 'A' : return *CHAR_TO_MORSE_ALPHA[0];
+		case 'A' : return CHAR_TO_MORSE_ALPHA[0];
 		/*case 'B' : return CHAR_TO_MORSE_ALPHA[1];
 		case 'C' : return CHAR_TO_MORSE_ALPHA[2];
 		case 'D' : return CHAR_TO_MORSE_ALPHA[3];

@@ -42,7 +42,7 @@ int floatToInt(float input);
 float intToFloat(int input);
 float calcResultantAcc (float acc_x, float acc_y, float acc_z);
 
-char charToMorse(char letter);
+const char* charToMorse(char letter);
 char numberToMorse(char number);
 
 
