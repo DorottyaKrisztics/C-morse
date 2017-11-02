@@ -61,7 +61,7 @@ const char* charToMorse(char letter){
 	}
 }
 
-char numberToMorse(char number){
-	int value = number;
-	return *CHAR_TO_MORSE_NUMBER[value];
+const char* numberToMorse(char number){
+	int value = number -'0';
+	return CHAR_TO_MORSE_NUMBER[value];
 }

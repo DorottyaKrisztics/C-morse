@@ -1,6 +1,5 @@
 #include "selfprot.h"
-#include <stdio.h>
-#include <math.h>
+
 
 #define toString(s) (s==OK?"OK":(s==HIGH_ACCELERATION?"HIGH ACCELERATION":(s==HIGH_TEMP?"HIGH TEMP":"HIGH ACCELERATION AND TEMP")))
 
@@ -59,6 +58,7 @@ void test(float acc_x, float acc_y, float acc_z, unsigned int light) {
     CharToMorse(word, morseWord);
     strcat(GENERATED_OUTPUT, morseWord);
     strcat(GENERATED_OUTPUT, "\n");
+
     numOfUsedBits = MorseToBinary(morseWord, morseBin);
     for(i=0;i<32 && i<numOfUsedBits;i++) {
     	int j;

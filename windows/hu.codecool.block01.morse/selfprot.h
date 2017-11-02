@@ -1,7 +1,9 @@
 #ifndef SELFPROT_H
 #define SELFPROT_H
 
-
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
 
 /**************************************************************************/
 /************************ USEABLE CUSTOM DATA TYPES ***********************/
@@ -43,7 +45,7 @@ float intToFloat(int input);
 float calcResultantAcc (float acc_x, float acc_y, float acc_z);
 
 const char* charToMorse(char letter);
-char numberToMorse(char number);
+const char* numberToMorse(char number);
 
 
 
