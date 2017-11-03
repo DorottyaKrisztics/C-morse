@@ -44,8 +44,9 @@ int floatToInt(float input);
 float intToFloat(int input);
 float calcResultantAcc (float acc_x, float acc_y, float acc_z);
 
-const char* charToMorse(char letter);
+const char* dictionary(char letter);
 const char* numberToMorse(char number);
+void signToBinary(char input[], char binArray[]);
 
 
 

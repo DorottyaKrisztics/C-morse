@@ -11,43 +11,52 @@
  * returns: the number of used bits for morse
  */
 int MorseToBinary(char input[], char output[]) {
-	int i;
+	char binArray[250] = {""};
+	signToBinary(input, binArray);
+	int lenBin = binaryToBits(binArray, output);
+	return lenBin;
+}
+
+void signToBinary(char *input, char *binArray){
 	int len = strlen(input);
-	char bin[10000] = {""};
+	int i;
 	for (i=0; i<len; i++) {
 		char sign = input[i];
 		switch (sign){
 			case '.' :
-				strcat(bin, "1");
+				strcat(binArray, "1");
 				break;
 			case '-' :
-				strcat(bin, "111");
+				strcat(binArray, "111");
 				break;
 			case ' ' :
-				strcat(bin, "0");
+				strcat(binArray, "0");
 				break;
 			case '/' :
-				strcat(bin, "000");
+				strcat(binArray, "000");
 				break;
 			case '\t' :
-				strcat(bin, "0000000");
+				strcat(binArray, "0000000");
 				break;
 		}
 	}
+}
+
+int binaryToBits(char binArray[], char output[]){
 	int j, k;
-	char one = 1;
-	int lenBin = strlen(bin);
+	const char one = 1;
+	int lenBin = strlen(binArray);
 	for (k = 0; k < (lenBin / 8) + 1; k++){
 		for (j = k*8; j < (k+1)*8; j++){
 			if (j != ((k+1)*8) - 1){
-				if (bin[j] == '1'){
+				if (binArray[j] == '1'){
 					output[k]= output[k]|one;
 					output[k]= output[k]<<1;
 				} else {
 					output[k]= output[k]<<1;
 				}
 			} else {
-				if (bin[j] == '1'){
+				if (binArray[j] == '1'){
 					output[k]= output[k]|one;
 				}
 			}
@@ -55,3 +64,5 @@ int MorseToBinary(char input[], char output[]) {
 	}
 	return lenBin;
 }
+
+

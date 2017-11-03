@@ -31,8 +31,8 @@ int main() {
     test(5,0,0,0);      /* HIGH ACCELERATION */
     strcat(GENERATED_OUTPUT, "\n\n");
     test(2,2,2,40);    /* HIGH ACCELERATION AND TEMP */
-    //strcat(GENERATED_OUTPUT, "\n\n");
-    //test(-1.556,0,0,0);      /* OK */
+    /*strcat(GENERATED_OUTPUT, "\n\n"); */
+    /*test(-1.556,0,0,0);      /* OK */
 
     testOk = (strcmp(EXPECTED_OUTPUT, GENERATED_OUTPUT)==0);
     printf("TEST: %s\n", (testOk?"OK":"FAILED"));

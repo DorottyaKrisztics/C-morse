@@ -18,10 +18,10 @@ int CharToMorse(char input[], char *output) {
 	int len = strlen(input);
 	for (i=0; i<len; i++) {
 
-		char* morseLetter = charToMorse(input[i]);
+		const char* morseLetter = dictionary(input[i]);
 		if (morseLetter != "\t"){
 			strcat(output, morseLetter);
-			if (charToMorse(input[i+1]) != "\t" && i != len-1){
+			if (dictionary(input[i+1]) != "\t" && i != len-1){
 				strcat(output, "/");
 			}
 		} else{
@@ -31,7 +31,7 @@ int CharToMorse(char input[], char *output) {
 	return len-1;
 }
 
-const char* charToMorse(char letter){
+const char* dictionary(char letter){
 
 	switch (letter){
 		case 'A' : return CHAR_TO_MORSE_ALPHA[0];
