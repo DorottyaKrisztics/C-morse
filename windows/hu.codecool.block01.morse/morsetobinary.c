@@ -1,5 +1,7 @@
 #include "selfprot.h"
 
+void signToBinary(char input[], char binArray[]);
+int binaryToBits(char binArray[], char output[]);
 /*
  * Function: MorseToBinary
  * --------------------------------------------

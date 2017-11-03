@@ -1,5 +1,7 @@
 #include "selfprot.h"
 
+const char* dictionary(char letter);
+const char* numberToMorse(char number);
 /*
  * Function: CharToMorse
  * --------------------------------------------

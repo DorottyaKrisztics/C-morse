@@ -1,5 +1,7 @@
 #include "selfprot.h"
 
+float intToFloat(int input);
+float calcResultantAcc (float acc_x, float acc_y, float acc_z);
 /*
  * Function: CalculateSystemState
  * --------------------------------------------

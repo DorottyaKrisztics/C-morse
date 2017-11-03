@@ -1,5 +1,6 @@
 #include "selfprot.h"
 
+int floatToInt(float input);
 /*
  * Function: CreateEnvironmentData
  * --------------------------------------------
